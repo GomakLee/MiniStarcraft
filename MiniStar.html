@@ -18,6 +18,23 @@ src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
 crossorigin="anonymous"></script>
 <script>
+var hp = 3
+$("#drone").click(function (){
+   
+    $("#spit").fadeIn(); //드론 클릭하면 독침 나타남
+    $("#spit").animate({ //그 독침이 이동하기 -> 벙커까지
+        left : "+=250px"
+        });
+    $("#spit").fadeOut(function(){// 독침 눈에 사라지기
+            hp=hp-1;
+            $("#hp").text("HP: "+ hp);
+            if(hp == 0){
+            $("#bunker").fadeOut();
+            }
+        }); 
+    $("#spit").css({left : "150px"});    //그 독침 매번 발사하기 위해 독침의 위치값 초기화
+  
+});
 
 </script>
 </body>
